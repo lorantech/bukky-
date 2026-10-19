@@ -1,8 +1,13 @@
 import Image from "next/image";
 import { RevealWords, GoldRule } from "@/components/store/Cinematic";
 import { BRAND, whatsappUrl } from "@/lib/brand";
-import { MEDIA } from "@/lib/media";
+import { MEDIA_IMAGES } from "@/lib/media";
 import { Button } from "@/components/ui/Button";
+
+const ABOUT_SHOTS = [
+  { ...MEDIA_IMAGES.custom, caption: "The Muse" },
+  { ...MEDIA_IMAGES.agbada, caption: "The Craft" },
+];
 
 export default function AboutPage() {
   return (
@@ -12,18 +17,18 @@ export default function AboutPage() {
         <RevealWords as="h1" text="Dressed With Intention" className="editorial-h1 mt-3 block max-w-5xl" />
         <GoldRule className="my-10 max-w-[280px]" />
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-14">
-          {MEDIA.about.map((src, i) => (
-            <div key={src} className="group relative aspect-[4/5] overflow-hidden bg-charcoal">
+          {ABOUT_SHOTS.map((shot) => (
+            <div key={shot.src} className="group relative aspect-[4/5] overflow-hidden bg-charcoal">
               <Image
-                src={src}
-                alt={i === 0 ? "Bukky Collection signature look" : "Atelier craftsmanship detail"}
+                src={shot.src}
+                alt={shot.alt}
                 fill
                 sizes="(max-width:768px) 100vw, 50vw"
                 className="object-cover object-top transition-transform duration-[1.4s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.05]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent opacity-60" />
               <span className="absolute bottom-5 left-5 label !text-champagne">
-                {i === 0 ? "The Muse" : "The Craft"}
+                {shot.caption}
               </span>
             </div>
           ))}
