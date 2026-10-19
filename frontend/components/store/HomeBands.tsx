@@ -6,7 +6,7 @@ import { Star, Truck, ShieldCheck, Scissors } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Counter } from "@/components/ui/Counter";
 import { BRAND, whatsappUrl } from "@/lib/brand";
-import { MEDIA_VIDEOS, MEDIA_IMAGES } from "@/lib/media";
+import { MEDIA_IMAGES } from "@/lib/media";
 import { RevealWords, ParallaxImage, GoldRule } from "@/components/store/Cinematic";
 
 export function AtelierBand() {
@@ -19,7 +19,7 @@ export function AtelierBand() {
   return (
     <section className="relative overflow-hidden bg-charcoal text-ivory">
       <ParallaxImage speed={50} className="absolute inset-0 opacity-25">
-        <Image src={MEDIA_IMAGES.atelier || MEDIA_IMAGES.hero1.src} alt="Inside the Bukky Collection atelier" fill className="object-cover object-top" sizes="100vw" />
+        <Image src={MEDIA_IMAGES.atelier.src} alt={MEDIA_IMAGES.atelier.alt} fill className="object-cover object-top" sizes="100vw" />
       </ParallaxImage>
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/85 to-charcoal/40" />
       <div className="relative container-page section-py grid lg:grid-cols-2 gap-12 items-center">

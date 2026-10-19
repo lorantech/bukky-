@@ -28,6 +28,7 @@ export const MEDIA_IMAGES = {
   senator: { src: "/media/image-5.jpeg", alt: "Senator Wear" },
   readyToWear: { src: "/media/image-6.jpeg", alt: "Ready to Wear" },
   custom: { src: "/media/image-7.jpeg", alt: "Custom Designs" },
+  atelier: { src: "/media/image-2.jpeg", alt: "Inside the Bukky Collection atelier" },
   
   // Category fallbacks
   category: {
